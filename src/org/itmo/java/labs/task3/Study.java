@@ -1,4 +1,4 @@
-package org.itmo.java.labs.task3.ex1;
+package org.itmo.java.labs.task3;
 
 class Study {
 
