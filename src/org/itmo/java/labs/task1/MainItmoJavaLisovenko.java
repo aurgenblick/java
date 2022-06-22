@@ -1,4 +1,4 @@
-package org.itmo.java.task1;
+package org.itmo.java.labs.task1;
 
 import java.util.Scanner;
 
