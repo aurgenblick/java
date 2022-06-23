@@ -37,10 +37,18 @@ public class Apartment {
         this.isAvailable = isAvailable; //Availability of the Apartment
         apnumber ++;
     }
+
+    /**
+     *
+     */
+
     void displayInfo() {
         System.out.println("There are "+apnumber+" apartments in the list.");
-        System.out.println("Apartment: "+num+"\nTotal apartment area: "+totalArea+"\nNumber of rooms: "+roomsNum+"\nKitchen area: "+kitchenArea);
-        if (isAvailable == true) {
+        System.out.println("Apartment: "+num+"\n" +
+                "Total apartment area: "+totalArea+"\n" +
+                "Number of rooms: "+roomsNum+"\n" +
+                "Kitchen area: "+kitchenArea);
+        if (isAvailable) {
             System.out.println("AVAILABLE");
         }
         else {

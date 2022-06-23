@@ -17,7 +17,7 @@ class Study {
 class JavaProgram {
     public static void main(String[] args) {
         //Создание объекта класса Study с заданным значением поля
-        Study Study1 = new Study("Изучение Java - это просто!");
+        Study Study1 = new Study("Learning Java is easy!");
         //Обращение к методу printCourse для вывода значения поля course
         System.out.println(Study1.printCourse());
     }
