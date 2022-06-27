@@ -40,31 +40,37 @@ public class Calculator {
     public static double sum(double number1, double number2) {
         return number1 + number2;
     }
+
     public static long sum(long number1, long number2) {
         return number1 + number2;
     }
+
     public static int sum(int number1, int number2) {
         return number1 + number2;
     }
 
     //DIVIDING
     public static double div(double number1, double number2) {
-        return (double) (number1 / number2);
+        return number1 / number2;
     }
-    public static double div(long number1, long number2) {
-        return (double) (number1 / number2);
+
+    public static long div(long number1, long number2) {
+        return number1 / number2;
     }
+
     public static double div(int number1, int number2) {
-        return (double) (number1 / number2);
+        return (long) (number1 / number2);
     }
 
     //MULTIPLYING
     public static double mult(double number1, double number2) {
         return number1 * number2;
     }
+
     public static long mult(long number1, long number2) {
         return number1 * number2;
     }
+
     public static int mult(int number1, int number2) {
         return number1 * number2;
     }
@@ -73,9 +79,11 @@ public class Calculator {
     public static double subt(double number1, double number2) {
         return number1 - number2;
     }
+
     public static long subt(long number1, long number2) {
         return number1 - number2;
     }
+
     public static int subt(int number1, int number2) {
         return number1 - number2;
     }
