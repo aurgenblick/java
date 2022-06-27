@@ -11,16 +11,28 @@ public class SimpleClass {
 
     }
 
+    public void setColour(String c) {
+        this.colour = c;
+    }
+
+    public void setName(String n) {
+        this.name = n;
+    }
+
+    public void setWeight(Double w) {
+        this.weight = w;
+    }
+
     public static void main(String[] args) {
         //Создание двух объектов (sc1 и sc2) класса SimpleClass
         SimpleClass sc1 = new SimpleClass();
-        sc1.colour = "RED";
-        sc1.name = "first";
-        sc1.weight = 12.5;
+        sc1.setColour("RED");
+        sc1.setName("first");
+        sc1.setWeight(12.5);
         SimpleClass sc2 = new SimpleClass();
-        sc2.colour = "GRAY";
-        sc2.name = "second";
-        sc2.weight = 11.3;
+        sc2.setColour("GRAY");
+        sc2.setName("second");
+        sc2.setWeight(11.3);
         //Обращение к методу printInfo для вывода значений полей созданных объектов
         System.out.println(sc1.printInfo());
         System.out.println(sc2.printInfo());
