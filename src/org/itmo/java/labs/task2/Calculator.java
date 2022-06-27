@@ -59,7 +59,7 @@ public class Calculator {
     }
 
     public static double div(int number1, int number2) {
-        return (long) (number1 / number2);
+        return ((double)number1 / number2);
     }
 
     //MULTIPLYING
