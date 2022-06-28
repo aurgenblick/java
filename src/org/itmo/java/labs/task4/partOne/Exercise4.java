@@ -13,7 +13,7 @@ public class Exercise4 {
         System.out.println("Введите третье число:");
         InputNumbers[2] = Integer.parseInt(sc.next());
         //Переменной присваивается true, если второе число больше первого, а третье больше второго
-        Boolean eq = (InputNumbers[1]>InputNumbers[0] && InputNumbers[2]>InputNumbers[1]) ? true : false;
+        Boolean eq = ((InputNumbers[1]>InputNumbers[0]) && (InputNumbers[2]>InputNumbers[1]));
         System.out.println("Результат: "+eq);
     }
 }
