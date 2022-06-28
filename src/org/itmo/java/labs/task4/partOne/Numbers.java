@@ -1,7 +1,5 @@
-package org.itmo.java.labs.task4;
+package org.itmo.java.labs.task4.partOne;
 
-
-import java.util.Arrays;
 
 class Numbers {
 

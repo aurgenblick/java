@@ -1,7 +1,8 @@
-package org.itmo.java.labs.task4;
+package org.itmo.java.labs.task4.partOne;
+
 import java.util.Scanner;
 
-public class Exercise4 {
+public class Exercise3 {
     public static Integer[] InputNumbers = new Integer[3];
 
     public static void main(String[] args) {
@@ -12,8 +13,9 @@ public class Exercise4 {
         InputNumbers[1] = Integer.parseInt(sc.next());
         System.out.println("Введите третье число:");
         InputNumbers[2] = Integer.parseInt(sc.next());
-        //Переменной присваивается true, если второе число больше первого, а третье больше второго
-        Boolean eq = (InputNumbers[1]>InputNumbers[0] && InputNumbers[2]>InputNumbers[1]) ? true : false;
+        Integer sum = InputNumbers[0] + InputNumbers[1];
+        //Переменной присваивается true, если сумма первых двух чисел равна третьему числу
+        Boolean eq = (sum == InputNumbers[2]) ? true : false;
         System.out.println("Результат: "+eq);
     }
 }

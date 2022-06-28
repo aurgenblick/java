@@ -1,4 +1,4 @@
-package org.itmo.java.labs.task4;
+package org.itmo.java.labs.task4.partOne;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class Exercises5and6 {
         out.println(isThree);
 
         //Переменной присваивается true, если массив содержит число 1 или 3
-        Boolean isOneOrThree = false;
+        boolean isOneOrThree = false;
         for (Integer i : InputNumbers) {
             if (InputNumbers[i] == 1 | InputNumbers[i] == 3) ;
             {
