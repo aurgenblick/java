@@ -75,7 +75,7 @@ public class Exercise1 {
         StringBuilder censoredText = new StringBuilder();
         for (String textWord : textWords) {
             //Случай, когда всё слово равно бяке - вместо всего слова вставляем заглушку
-            if (textWord.equalsIgnoreCase(unwantedWord)){
+            if (textWord.equalsIgnoreCase(unwantedWord)) {
                 censoredText.append(replaceWord);
             }
             //Случай, когда слово содержит бяку
@@ -83,15 +83,15 @@ public class Exercise1 {
                 //Определяем индекс, с которого входит бяка
                 int indexOfReplacement = textWord.toLowerCase().indexOf(unwantedWord.toLowerCase());
                 //Выделяем ту часть слова, которая относится к бяке
-                String textWordPart = textWord.substring(indexOfReplacement, indexOfReplacement+unwantedWord.length());
+                String textWordPart = textWord.substring(indexOfReplacement, indexOfReplacement + unwantedWord.length());
                 //Составляем слово, где часть, относящаяся к бяке, заменяется заглушкой
                 var censoredWord = textWord.replaceAll(textWordPart, replaceWord);
                 //Проверям, что составленное слово не содержит бяку и удаляем её, если содержит
-                while(censoredWord.toLowerCase().contains(unwantedWord.toLowerCase())) {
+                while (censoredWord.toLowerCase().contains(unwantedWord.toLowerCase())) {
                     //Определяем индекс, с которого входит бяка
                     int newindexOfReplacement = censoredWord.toLowerCase().indexOf(unwantedWord.toLowerCase());
                     //Выделяем ту часть слова, которая относится к бяке
-                    String censoredWordPart = censoredWord.substring(newindexOfReplacement, newindexOfReplacement+unwantedWord.length());
+                    String censoredWordPart = censoredWord.substring(newindexOfReplacement, newindexOfReplacement + unwantedWord.length());
                     //Составляем слово, где часть, относящаяся к бяке, заменяется заглушкой
                     String oldCensoredWord = censoredWord;
                     censoredWord = oldCensoredWord.replaceAll(censoredWordPart, replaceWord);
@@ -108,21 +108,62 @@ public class Exercise1 {
             censoredText.append(" ");
         }
         //Выводим отцензурированный текст
-        System.out.println(censoredText.toString());
+        System.out.println("\nЗадание 3. Отцензурированный текст: \n"+censoredText.toString());
+    }
+
+    /*Задание 4. Поиска количества вхождений подстроки в строку
+     */
+
+    private static void occurenceCount(String givenText) {
+        String string = givenText.substring(2, 4);
+        StringBuilder remainingText = new StringBuilder(givenText);
+        int occurenceCounter = 0;
+        //Выполняем цикл со счетчиком, если строка содержит подстроку
+        while (remainingText.toString().contains(string)) {
+            //Прибавляем счетчик и задаем индекс, после которого надо производить дальнейшую проверку
+            occurenceCounter++;
+            int newindexOfOccurence = remainingText.indexOf(string) + string.length();
+            //Выделяем оставшаяся часть строки, которая следует после первого вхождения подстроки
+            String remainingTextPart = remainingText.substring(newindexOfOccurence + string.length(), remainingText.length());
+            //Присваиваем строке зачение оставшейся части строки
+            remainingText = new StringBuilder(remainingTextPart);
+        }
+        //Выводим счетчик вхождений
+        System.out.println("Строка \"" + string + "\" повторяется в тексте " + occurenceCounter + " раз.");
+    }
+
+    /*Задание 5. Инвертирование слов в строке, не содержащей знаков препинания, если слова разделены пробелами
+     */
+
+    private static void wordsInverter(String givenText) {
+        //Разделяем текст на слова по пробелам и создаем массив из этих слов
+        String[] givenWords = givenText.split(" ");
+        //Создаем массив инвертированных слов той же длины
+        String[] invertedWords = new String[givenWords.length];
+        //Задаем начало отсчета элементов массива для последующего заполнения массива инвертированных слов в цикле
+        int i = 0;
+        //Заполняем массив инвертированных слов, инвертируя по одному слова массива исходных слов с помощью метода StringBuilder
+        for (String givenWord : givenWords) {
+            StringBuilder wordBuilder = new StringBuilder(givenWord);
+            invertedWords[i] = wordBuilder.reverse().toString();
+            i++;
+        }
+        //Соединяем элементы массива инвертированных слов в одну строку и выводим
+        System.out.println(String.join(" ", invertedWords));
     }
 
 
     public static void main(String[] args) {
 
         //Задание 1. Самое длинное слово в тексте
-        System.out.println("Please enter text");
+        System.out.println("Задание 1. Подалуйста введите текст: ");
         String text = getText();
         longestWord(text);
         //String text2 = "В 2020 году можно было бы написать самый длинный текст на свете, если бы проводить время продуктивно . Ведь более 9000000000 людей оказались дома без большого выбора разлечений ...............";
         //longestWord(text2);
 
         //Задание 2. Определение палиндрома
-        System.out.println("Please enter a word");
+        System.out.println("\nЗадание 2. Пожалуйста введите слово: ");
         String word = getText();
         isPalindrome(word);
 
@@ -131,6 +172,18 @@ public class Exercise1 {
                 "Не так давно произошёл подобный случай, когда БЯКА и мы вместе с коллегой искали способ избежать передачи большого количества типовых параметров в тех местах, где компилятор должен был по идее их вывести. Однако бяКа , C# так устроен, что способен выводить типы в обобщённых вызовах только из передаваемых параметров метода.";
         String badWord = "бяка";
         censorship(badText, badWord);
+
+
+        //Задание 4. Посчет количества вхождений подстроки в строку
+        String bigString = "Оаоаооаоооаоо оаоаоаооао оаааоуууэаоаа оаоаоээыыыао";
+        System.out.println("\nЗадание 4. Дана строка : \n"+bigString);
+        occurenceCount(bigString);
+
+        //Задание 5. Инвертирование слов в строке
+        System.out.println("\nЗадание 5. Подалуйста введите текст без знаков препинания ");
+        String stringOfWords = getText();
+        System.out.println("Инвертируем слова в строке :");
+        wordsInverter(stringOfWords);
     }
 
 }
