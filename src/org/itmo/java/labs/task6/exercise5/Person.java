@@ -2,7 +2,7 @@ package org.itmo.java.labs.task6.exercise5;
 
 import java.util.Scanner;
 
-/*5.	Создайте главный класс. Добавьте в него:
+/**5.	Создайте главный класс. Добавьте в него:
 ●	метод для получения возраста пользователя;
 */
 class Person {
@@ -28,7 +28,7 @@ class Person {
 
 }
 
-/*Создайте класс-наследник. Добавьте в него:
+/**Создайте класс-наследник. Добавьте в него:
 ●	переопределенный метод для получения имени пользователя;
 */
 
@@ -38,7 +38,7 @@ class User extends Person {
     @Override
     public void setName() {
         System.out.println("Enter name :");
-        this.name = scanner.nextLine();
+        this.name = super.scanner.nextLine();
     }
 
     public static void main(String[] args) {

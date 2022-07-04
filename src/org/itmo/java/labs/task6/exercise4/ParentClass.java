@@ -14,7 +14,7 @@ import java.util.Scanner;
 //главный класс
 class ParentClass {
     //поле для ввода целого числа
-    int field = 10;
+    int field;
 
     //сеттер
     public void setField() {

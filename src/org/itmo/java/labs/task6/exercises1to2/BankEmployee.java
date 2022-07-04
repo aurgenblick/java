@@ -30,11 +30,11 @@ public class BankEmployee extends Person {
 
     @Override
     public void sendMessage(Person addressee, String msgText) {
-        System.out.println(outcomingMessages.append("\nСообщение от " + this.getName() + " для " + addressee.getName() + ": " + msgText));
+        System.out.println(OutcomingMessages.append("\nСообщение от " + this.getName() + " для " + addressee.getName() + ": " + msgText));
     }
 
     @Override
     public void getMessage(Person sender, String msgText) {
-        System.out.println(incomingMessages.append("\nСообщение от " + sender.getName() + " для " + this.getName()  + ": " + msgText));
+        System.out.println(IncomingMessages.append("\nСообщение от " + sender.getName() + " для " + this.getName()  + ": " + msgText));
     }
 }
