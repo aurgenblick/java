@@ -50,15 +50,15 @@ public class Exercise1 {
      */
 
     private static void isPalindrome(String inputWord) {
-        boolean Palindrome = false;
+        boolean isPalindrome = false;
         for (int i = 0; i < (inputWord.length() / 2); i++) {
             char first = inputWord.charAt(i);
             char last = inputWord.charAt(inputWord.length() - 1 - i);
             if (first == last) {
-                Palindrome = true;
+                isPalindrome = true;
             }
         }
-        if (Palindrome) {
+        if (isPalindrome) {
             System.out.println("Слово \"" + inputWord + "\" является палиндромом");
         } else {
             System.out.println("Слово \"" + inputWord + "\" не является палиндромом");
@@ -84,7 +84,7 @@ public class Exercise1 {
                 //Выделяем ту часть слова, которая относится к бяке
                 String textWordPart = textWord.substring(indexOfReplacement, indexOfReplacement + unwantedWord.length());
                 //Составляем слово, где часть, относящаяся к бяке, заменяется заглушкой
-                var censoredWord = textWord.replaceAll(textWordPart, replaceWord);
+                String censoredWord = textWord.replaceAll(textWordPart, replaceWord);
                 //Проверям, что составленное слово не содержит бяку и удаляем её, если содержит
                 while (censoredWord.toLowerCase().contains(unwantedWord.toLowerCase())) {
                     //Определяем индекс, с которого входит бяка
@@ -113,8 +113,8 @@ public class Exercise1 {
     /*Задание 4. Поиска количества вхождений подстроки в строку
      */
 
-    private static void occurenceCount(String givenText) {
-        String string = givenText.substring(2, 4);
+    private static void occurenceCount(String givenText, String string) {
+
         StringBuilder remainingText = new StringBuilder(givenText);
         int occurenceCounter = 0;
         //Выполняем цикл со счетчиком, если строка содержит подстроку
@@ -175,8 +175,9 @@ public class Exercise1 {
 
         //Задание 4. Посчет количества вхождений подстроки в строку
         String bigString = "Оаоаооаоооаоо оаоаоаооао оаааоуууэаоаа оаоаоээыыыао";
-        System.out.println("\nЗадание 4. Дана строка : \n"+bigString);
-        occurenceCount(bigString);
+        System.out.println("\nЗадание 4. Дана строка : \n"+bigString+"\nВведите подстроку: ");
+        String subString = getText();
+        occurenceCount(bigString, subString);
 
         //Задание 5. Инвертирование слов в строке
         System.out.println("\nЗадание 5. Подалуйста введите текст без знаков препинания ");
