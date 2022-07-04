@@ -25,7 +25,7 @@ public class Apartment {
 
     //Constructor with one parameter
     public Apartment(Integer n) {
-        this.num = num;
+        this.num = n;
     }
 
     //Constructor with all fields
