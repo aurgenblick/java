@@ -70,6 +70,6 @@ public class Names extends Thread {
             threadNames[i] = new Names (sc.nextLine());
             printingThreads[i] = new Thread(threadNames[i] :: printName);
         }
-        Arrays.stream(printingThreads).forEach(Thread::start);
+        Arrays.stream(printingThreads).forEach(Thread :: start);
     }
 }

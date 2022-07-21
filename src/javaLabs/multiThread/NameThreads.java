@@ -32,7 +32,7 @@ public class NameThreads extends Thread {
                     System.out.println("Имя треда: " + Thread.currentThread().getName());
                     flag = true;
                     try {
-                        Thread.sleep(300);
+                        Thread.sleep(10000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -52,8 +52,8 @@ public class NameThreads extends Thread {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //System.out.println("Введите количество имен: ");
-        int threadsNumber = 2;
+        System.out.println("Введите количество имен: ");
+        int threadsNumber = Integer.parseInt(sc.nextLine());
         NameThreads[] threads = new NameThreads[threadsNumber];
         for (int i = 0; i < threadsNumber; i++) {
             System.out.println("Введите имя треда: ");
