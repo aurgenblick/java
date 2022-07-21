@@ -20,7 +20,7 @@ public class NameThreads extends Thread {
     //конструктор, который задает имя потока и запускает его
     public NameThreads(String name) {
         this.setName(name);
-        this.start();
+        //this.start();
     }
 
     //в методе run реализуем вывод имени потока
@@ -32,7 +32,7 @@ public class NameThreads extends Thread {
                     System.out.println("Имя треда: " + Thread.currentThread().getName());
                     flag = true;
                     try {
-                        Thread.sleep(10000);
+                        Thread.sleep(300);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -52,8 +52,9 @@ public class NameThreads extends Thread {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите количество имен: ");
-        int threadsNumber = Integer.parseInt(sc.nextLine());
+        //System.out.println("Введите количество имен: ");
+        int threadsNumber = 2;
+                //Integer.parseInt(sc.nextLine());
         NameThreads[] threads = new NameThreads[threadsNumber];
         for (int i = 0; i < threadsNumber; i++) {
             System.out.println("Введите имя треда: ");
