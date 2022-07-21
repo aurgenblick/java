@@ -1,9 +1,6 @@
 package javaLabs.multiThread;
 
-import javax.naming.Name;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class NameThreads extends Thread {
@@ -53,15 +50,17 @@ public class NameThreads extends Thread {
     }
 
 
-        public static void main (String[]args){
-            Scanner sc = new Scanner(System.in);
-//            System.out.println("Введите количество имен: ");
-            int threadsNumber = 2;
-            NameThreads[] threads = new NameThreads[threadsNumber];
-            for (int i = 0; i < threadsNumber; i++) {
-                System.out.println("Введите имя треда: ");
-                threads[i] = new NameThreads(sc.next());
-            }
-            Arrays.stream(threads).forEach(Thread::start);
+    public static void main (String[]args){
+        Scanner sc = new Scanner(System.in);
+        //System.out.println("Введите количество имен: ");
+        int threadsNumber = 2;
+        NameThreads[] threads = new NameThreads[threadsNumber];
+        for (int i = 0; i < threadsNumber; i++) {
+            System.out.println("Введите имя треда: ");
+            threads[i] = new NameThreads(sc.next());
+        }
+        for (int i = 0; i < threadsNumber; i++) {
+            threads[i].start();
         }
     }
+}
