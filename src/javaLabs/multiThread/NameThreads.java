@@ -50,7 +50,7 @@ public class NameThreads extends Thread {
     }
 
 
-    public static void main (String[]args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //System.out.println("Введите количество имен: ");
         int threadsNumber = 2;
@@ -59,8 +59,6 @@ public class NameThreads extends Thread {
             System.out.println("Введите имя треда: ");
             threads[i] = new NameThreads(sc.next());
         }
-        for (int i = 0; i < threadsNumber; i++) {
-            threads[i].start();
-        }
+        Arrays.stream(threads).forEach(Thread::start);
     }
 }
